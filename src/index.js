@@ -33,16 +33,61 @@
 
 import React from "react";
 import ReactDOM from "react-dom";
+import faker from "@faker-js/faker";
 import CommentComponent from "./CommentComponent.js";
+import CardComponent from "./CardComponent.js";
 
 const App = function () {
   return (
-    <div>
-      <CommentComponent />
-      <CommentComponent />
-      <CommentComponent />
-      <CommentComponent />
-      <CommentComponent />
+    <div
+      style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+    >
+      <CardComponent>
+        <CommentComponent
+          name={faker.name.firstName()}
+          day={1}
+          star={5}
+          image={faker.image.avatar()}
+          text={faker.lorem.paragraph()}
+        />
+      </CardComponent>
+
+      <CardComponent>
+        <CommentComponent
+          name={faker.name.firstName()}
+          day={1}
+          star={5}
+          image={faker.image.avatar()}
+          text={faker.lorem.paragraph()}
+        />
+      </CardComponent>
+      <CardComponent>
+        <CommentComponent
+          name={faker.name.firstName()}
+          day={1}
+          star={5}
+          image={faker.image.avatar()}
+          text={faker.lorem.paragraph()}
+        />
+      </CardComponent>
+      <CardComponent>
+        <CommentComponent
+          name={faker.name.firstName()}
+          day={1}
+          star={5}
+          image={faker.image.avatar()}
+          text={faker.lorem.paragraph()}
+        />
+      </CardComponent>
+      <CardComponent>
+        <CommentComponent
+          name={faker.name.firstName()}
+          day={1}
+          star={5}
+          image={faker.image.avatar()}
+          text={faker.lorem.paragraph()}
+        />
+      </CardComponent>
     </div>
   );
 };
