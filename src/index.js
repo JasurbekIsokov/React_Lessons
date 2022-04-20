@@ -1,17 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+function data() {
+  let date = new Date();
+  let yil = date.getFullYear();
+  let oy = date.getMonth();
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  let kun = date.getDate();
+  let minut = date.getMinutes();
+  let vaqt = date.getHours();
+
+  return { vaqt, minut, kun, oy, yil };
+}
+
+let obj = data();
+
+const App = function () {
+  return (
+    <div>
+      <h1>
+        {obj.vaqt}:{obj.minut} {obj.kun}/{obj.oy + 1}/{obj.yil}
+      </h1>
+    </div>
+  );
+};
+
+ReactDOM.render(<App />, document.querySelector("#root"));
